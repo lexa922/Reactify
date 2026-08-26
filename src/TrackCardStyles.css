@@ -1,0 +1,27 @@
+.track-card{
+    border: black solid 1px;
+    width: 30em;
+    height: 5em;
+    display: flex;
+    margin-bottom: 0.3em;
+    border-radius: 1em;
+    justify-content: space-around;
+}
+
+.track-card img{
+    width: 5em;
+    object-fit: fill;
+    border-radius: 1em;
+}
+
+.track-card button{
+    width: 2em;
+    height: 2em;
+    margin: 2em;
+    border-radius: 50%;
+}
+
+.track-info{
+    width: 20em;
+    padding-left: 1em;
+}

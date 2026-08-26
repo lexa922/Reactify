@@ -1,0 +1,43 @@
+.player-container{
+    position: fixed;
+    border: 1px solid black;
+    width: 10em;
+    padding: 1em;
+    justify-content: center;
+    border-radius: 0.5em;
+    bottom: 1em;
+    right: 1em;
+}
+
+.player-image{
+    width: 10em;
+}
+
+.track-duration{
+    display: flex;
+    padding: 1em;
+    gap: 1em;
+    align-items: center;
+}
+
+.play-button{
+    width: 3em;
+    height: 2em;
+    border-radius: 50%;
+    justify-content: center;
+}
+
+.progress-bar{
+    -webkit-appearance: none !important;
+    background: #989898;
+    width: 11em;
+    height: 0.2em;
+}
+
+input[type='range']::-webkit-slider-thumb{
+    -webkit-appearance: none !important;
+    background: #303030;
+    height:0.7em;
+    width:0.7em;
+    border-radius: 50%;
+}
