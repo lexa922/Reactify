@@ -1,4 +1,8 @@
-function TrackCard({id, songName, artistName, imageUrl, audioUrl, onPlay}) {
+import {usePlayer} from './PlayerContext'
+
+function TrackCard({id, songName, artistName, imageUrl, audioUrl}) {
+    const { playTrack } = usePlayer();
+
     return(
         <div className="track-card">
             <img src={imageUrl} alt={songName} />
@@ -6,7 +10,7 @@ function TrackCard({id, songName, artistName, imageUrl, audioUrl, onPlay}) {
                 <h3>{songName}</h3>
                 <p>{artistName}</p>
             </div>
-            <button onClick={()=>onPlay({id, artistName, songName, imageUrl, audioUrl})}> ▶ </button>
+            <button onClick={()=>playTrack({id, artistName, songName, imageUrl, audioUrl})}> ▶ </button>
         </div>
     );
 }

@@ -1,13 +1,16 @@
-import {useState, useRef, useEffect} from 'react'
+import {useState, useRef, useEffect, use} from 'react'
+import {usePlayer} from "./PlayerContext";
 
-function Player({track}) {
-    const [isPlaying, setIsPlaying] = useState(false);
+function Player() {
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
 
+    const {currentTrack, playNext, playPrev, isPlaying, setIsPlaying} = usePlayer();
+
     const audioRef = useRef(null);
 
-    const audioSrc = typeof track === 'string' ? track : track?.audioUrl;
+    const audioSrc = typeof currentTrack === 'string' ? currentTrack : currentTrack?.audioUrl;
+
 
     function handlePlayPause(){
         if(isPlaying){
@@ -40,10 +43,7 @@ function Player({track}) {
     function handleLoadedMetaData(){
         setDuration(audioRef.current.duration);
     }
-    function handleTrackEnd(){
-        setIsPlaying(false);
-        setCurrentTime(0);
-    }
+
     useEffect(() => {
         if (audioSrc && audioRef.current) {
             audioRef.current.load();
@@ -57,18 +57,27 @@ function Player({track}) {
         }
     }, [audioSrc]);
 
+    if (!currentTrack){
+        return (
+            <div>
+            </div>
+        )
+    }
+
     return(
         <div className="player-container">
-            <img className="player-image" src={track.imageUrl} alt="1231321" />
+            <img className="player-image" src={currentTrack.imageUrl} alt=''/>
             <div className="player-info">
-                <h3>{track.songName}</h3>
-                <p>{track.artistName}</p>
+                <h3>{currentTrack.songName}</h3>
+                <p>{currentTrack.artistName}</p>
             </div>
-            <audio ref={audioRef} src={audioSrc} onTimeUpdate={handleTimeUpdate} onLoadedMetadata={handleLoadedMetaData} onEnded={handleTrackEnd}/>
+            <audio ref={audioRef} src={audioSrc} onTimeUpdate={handleTimeUpdate} onLoadedMetadata={handleLoadedMetaData} onEnded={playNext}/>
             <input className="progress-bar" type='range' min='0' max={duration} value={currentTime} onChange={handleSearch}/>
             <div className='track-duration'>
                 <p>{formatDuration(currentTime)}</p>
+                <button className="play-button" onClick={playPrev}>▶❚</button>
                 <button className="play-button" onClick={handlePlayPause}>{isPlaying ? "❚❚" : "▶"}</button>
+                <button className="play-button" onClick={playNext}>❚▶</button>
                 <p>{formatDuration(duration)}</p>
             </div>
         </div>

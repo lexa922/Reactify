@@ -1,9 +1,19 @@
-import {use} from 'react';
+import {use, useEffect} from 'react';
 import {getTracksResources} from './TrackResources'
+import {usePlayer} from "./PlayerContext";
 import TrackCard from './TrackCard'
 
-function TrackList({onSelectTrack}){
+function TrackList(){
+    const {setPlaylist} = usePlayer();
+
     const tracks = use(getTracksResources());
+
+
+    useEffect(() => {
+        setPlaylist(tracks);
+    },[])
+
+
 
     return (
         <div>
@@ -13,11 +23,10 @@ function TrackList({onSelectTrack}){
                         <TrackCard
                             key={track.id}
                             id={track.id}
-                                   artistName={track.artist_name}
-                                   songName={track.name}
-                                   imageUrl={track.image}
-                                   audioUrl={track.audio}
-                                   onPlay={onSelectTrack}
+                            artistName={track.artist_name}
+                            songName={track.name}
+                            imageUrl={track.image}
+                            audioUrl={track.audio}
                         />
                 ))}
             </div>

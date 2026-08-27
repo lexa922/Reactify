@@ -1,7 +1,7 @@
 .player-container{
     position: fixed;
     border: 1px solid black;
-    width: 10em;
+    width: 20em;
     padding: 1em;
     justify-content: center;
     border-radius: 0.5em;
@@ -10,7 +10,7 @@
 }
 
 .player-image{
-    width: 10em;
+    width: 20em;
 }
 
 .track-duration{
@@ -22,15 +22,14 @@
 
 .play-button{
     width: 3em;
-    height: 2em;
+    height: 3em;
     border-radius: 50%;
-    justify-content: center;
 }
 
 .progress-bar{
     -webkit-appearance: none !important;
     background: #989898;
-    width: 11em;
+    width: 23em;
     height: 0.2em;
 }
 
