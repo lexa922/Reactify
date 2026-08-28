@@ -22,6 +22,15 @@ export function PlayerProvider({ children }) {
         setCurrentTrack(track);
         if (newPlayList.length > 0)
             setPlaylist(newPlayList);
+        else {
+            setPlaylist(prevPlaylist => {
+                const exists = prevPlaylist.some(t => t.id === track.id);
+                if (!exists) {
+                    return [track, ...prevPlaylist];
+                }
+                return prevPlaylist;
+            });
+        }
         setIsPlaying(true);
     }
 

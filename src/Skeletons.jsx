@@ -3,3 +3,9 @@ function TracksSkeleton(){
 }
 
 export default TracksSkeleton;
+
+export function SearchSkeleton(){
+    return (
+        <p>Loading Songs...</p>
+    )
+}

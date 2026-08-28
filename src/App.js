@@ -1,5 +1,6 @@
 import {Suspense} from "react";
 import {PlayerProvider} from './PlayerContext'
+import {SearchProvider} from "./SearchContext";
 
 import './App.css';
 import './PlayerStyles.css'
@@ -8,6 +9,9 @@ import './TrackCardStyles.css'
 import Player from './Player';
 import TrackList from './TrackList';
 import TracksSkeleton from './Skeletons';
+import {SearchSkeleton} from "./Skeletons";
+import SearchBar from './SearchBar';
+import SearchResults from "./SearchResults";
 
 
 function App() {
@@ -17,7 +21,17 @@ function App() {
             <Suspense fallback={<TracksSkeleton />}>
                 <TrackList />
             </Suspense>
+
             <Player/>
+
+            <SearchProvider>
+                <SearchBar/>
+
+                <Suspense fallback={<SearchSkeleton/>}>
+                    <SearchResults/>
+                </Suspense>
+            </SearchProvider>
+
         </PlayerProvider>
     </>
   );
