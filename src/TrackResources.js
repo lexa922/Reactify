@@ -3,7 +3,7 @@ const CLIENT_ID = process.env.REACT_APP_JAMENDO_CLIENT_ID;
 let tracksPromise;
 
 export function createTracksResources() {
-    tracksPromise = fetch(`https://api.jamendo.com/v3.0/tracks/?client_id=${CLIENT_ID}&format=json&limit=4`)
+    tracksPromise = fetch(`https://api.jamendo.com/v3.0/tracks/?client_id=${CLIENT_ID}&format=json&limit=8`)
         .then(res => {
             if (!res.ok) throw new Error("Помилка завантаження даних");
             return res.json();

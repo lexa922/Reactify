@@ -53,3 +53,28 @@ input[type='range']::-webkit-slider-thumb{
 .player-info{
     font-size: 1.1em;
 }
+
+.middle-section{
+    display: flex;
+    justify-content: space-between;
+    height: 6em;
+}
+
+.player-volume-container{
+    display: flex;
+
+    p{
+        color: #f9e711;
+        margin-top: 2.9em;
+        margin-right: 0.3em;
+    }
+
+    input{
+        width: 7em;
+        height: 0.2em;
+        margin-top: 4em;
+        -webkit-appearance: none !important;
+        background: #6e6e6e;
+    }
+
+}
