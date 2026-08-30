@@ -50,6 +50,17 @@ function Player() {
         setCurrentVolume(newVolume);
         audioRef.current.volume = newVolume;
     }
+    function handleMute(){
+        if(currentVolume > 0)
+        {
+            setCurrentVolume(0);
+            audioRef.current.volume = 0;
+        }
+        else{
+            setCurrentVolume(1);
+            audioRef.current.volume = 1;
+        }
+    }
 
     useEffect(() => {
         if (audioSrc && audioRef.current) {
@@ -81,7 +92,7 @@ function Player() {
                 </div>
 
                 <div className='player-volume-container'>
-                    <p>{Math.floor(currentVolume * 100)}</p>
+                    <p onClick={handleMute}>{`${Math.floor(currentVolume * 100)}%`}</p>
                     <input type='range' min='0' max='1' step='0.01' value={currentVolume} onChange={handleVolumeChange}/>
                 </div>
             </div>
