@@ -15,11 +15,12 @@ function SearchResults(){
     const tracks = use(searchPromise);
 
     if (tracks.length === 0) {
-        return <p>Нічого не знайдено</p>;
+        return <div className='search-results'><h2>Нічого не знайдено</h2></div>;
     }
 
     return(
-        <div>
+        <div className="search-results">
+            <h2>Результати пошуку</h2>
             {tracks.map(track=>
                 <TrackCard
                 key={track.id}

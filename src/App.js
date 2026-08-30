@@ -5,6 +5,7 @@ import {SearchProvider} from "./SearchContext";
 import './App.css';
 import './PlayerStyles.css'
 import './TrackCardStyles.css'
+import './SearchStyles.css'
 
 import Player from './Player';
 import TrackList from './TrackList';

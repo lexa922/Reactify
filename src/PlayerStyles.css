@@ -1,16 +1,17 @@
 .player-container{
     position: fixed;
-    border: 1px solid black;
     width: 20em;
     padding: 1em;
     justify-content: center;
-    border-radius: 0.5em;
+    border-radius: 1em;
     bottom: 1em;
     right: 1em;
+    background-color: #303030;
 }
 
 .player-image{
     width: 20em;
+    border-radius: 1em;
 }
 
 .track-duration{
@@ -24,19 +25,31 @@
     width: 3em;
     height: 3em;
     border-radius: 50%;
+    background-color: #f9e711;
+    border: none;
+    outline: none;
+}
+
+.play-button:hover{
+    background-color: #b68d00;
+    color: #000000;
 }
 
 .progress-bar{
     -webkit-appearance: none !important;
-    background: #989898;
+    background: #6e6e6e;
     width: 23em;
     height: 0.2em;
 }
 
 input[type='range']::-webkit-slider-thumb{
     -webkit-appearance: none !important;
-    background: #303030;
+    background: #f9e711;
     height:0.7em;
     width:0.7em;
     border-radius: 50%;
+}
+
+.player-info{
+    font-size: 1.1em;
 }

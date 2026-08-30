@@ -25,7 +25,19 @@ function SearchBar() {
     return (
         <div className="search-bar-container">
             <input type='text' placeholder='Search...' value={searchText} onChange={handleSearchChange} onKeyDown={handleKeyDown}/>
-            <button onClick={handleSearchSong}>Пошук</button>
+            <button onClick={handleSearchSong}><svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            >
+                <circle cx="11" cy="11" r="7" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg></button>
         </div>
 
     );
