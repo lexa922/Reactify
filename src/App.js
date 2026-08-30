@@ -6,6 +6,7 @@ import './App.css';
 import './PlayerStyles.css'
 import './TrackCardStyles.css'
 import './SearchStyles.css'
+import './PlaylistStyles.css'
 
 import Player from './Player';
 import TrackList from './TrackList';
@@ -13,6 +14,7 @@ import TracksSkeleton from './Skeletons';
 import {SearchSkeleton} from "./Skeletons";
 import SearchBar from './SearchBar';
 import SearchResults from "./SearchResults";
+import PlaylistView from "./PlaylistView";
 
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
             </Suspense>
 
             <Player/>
+
+            <PlaylistView/>
 
             <SearchProvider>
                 <SearchBar/>

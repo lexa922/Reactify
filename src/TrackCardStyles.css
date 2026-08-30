@@ -15,19 +15,6 @@
     border: #101010 solid 1px;
 }
 
-.track-card button{
-    width: 2em;
-    height: 2em;
-    margin: 2em;
-    border-radius: 50%;
-    background-color: #f9e711;
-    border: none;
-}
-.track-card button:hover{
-    background-color: #b68d00;
-    color: #000000;
-}
-
 .track-info{
     width: 20em;
     padding-left: 1em;
@@ -38,5 +25,39 @@
     font-size: 1.2em;
     padding: 0;
     margin-top: 0.5em;
+}
+
+.active{
+    background-color: #ffc100;
+    color: black;
+}
+
+.inactive{
+    background-color: #303030;
+    color: white;
+}
+
+.track-button{
+    width: 2em;
+    height: 2em;
+    margin: 2em;
+    border-radius: 50%;
+    background-color: #f9e711;
+    border: none;
+}
+
+.track-button:hover{
+    background-color: #b68d00;
+    color: #000000;
+}
+
+.current{
+    background-color: black;
+    color: #f9e711;
+}
+
+.current:hover{
+    background-color: #1a1a1a;
+    color: #b6a708;
 }
 

@@ -73,6 +73,13 @@ export function PlayerProvider({ children }) {
         setPlaylist(updatedPlaylist);
     }
 
+    function isCurrentTrack(id) {
+        if (currentTrack && currentTrack.id === id)
+            return true
+
+        return false;
+    }
+
     const value = {
         currentTrack,
         playlist,
@@ -82,7 +89,8 @@ export function PlayerProvider({ children }) {
         playTrack,
         playNext,
         playPrev,
-        deleteTrack
+        deleteTrack,
+        isCurrentTrack
     };
 
     return (
