@@ -6,7 +6,7 @@ function Player() {
     const [duration, setDuration] = useState(0);
     const [currentVolume, setCurrentVolume] = useState(1);
 
-    const {currentTrack, playNext, playPrev, isPlaying, setIsPlaying} = usePlayer();
+    const {currentTrack, playNext, playPrev, isPlaying, setIsPlaying, deleteTrack} = usePlayer();
 
     const audioRef = useRef(null);
 
@@ -93,6 +93,7 @@ function Player() {
                 <button className="play-button" onClick={handlePlayPause}>{isPlaying ? "❚❚" : "▶"}</button>
                 <button className="play-button" onClick={playNext}>❚▶</button>
                 <p>{formatDuration(duration)}</p>
+                <button className='delete-button' onClick={()=>{deleteTrack(currentTrack.id)}}>✕</button>
             </div>
         </div>
     )

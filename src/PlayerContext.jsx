@@ -54,6 +54,25 @@ export function PlayerProvider({ children }) {
         setCurrentTrack(playlist[nextIndex]);
     }
 
+    function deleteTrack(id) {
+        const updatedPlaylist = playlist.filter(t => t.id !== id);
+
+        if (updatedPlaylist.length === 0) {
+            setPlaylist([]);
+            setCurrentTrack(null);
+            setIsPlaying(false);
+            return;
+        }
+
+        if (currentTrack && currentTrack.id === id) {
+            const currentIndex = playlist.findIndex(t => t.id === id);
+            const nextIndex = currentIndex >= updatedPlaylist.length ? 0 : currentIndex;
+            setCurrentTrack(updatedPlaylist[nextIndex]);
+        }
+
+        setPlaylist(updatedPlaylist);
+    }
+
     const value = {
         currentTrack,
         playlist,
@@ -62,7 +81,8 @@ export function PlayerProvider({ children }) {
         setPlaylist: setNormalizedPlaylist,
         playTrack,
         playNext,
-        playPrev
+        playPrev,
+        deleteTrack
     };
 
     return (
