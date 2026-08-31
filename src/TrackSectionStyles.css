@@ -1,0 +1,27 @@
+.track-list {
+    max-height: 37em;
+    width: 100%;
+    max-width: 30em;
+    box-sizing: border-box;
+    margin-bottom: 0.7em;
+}
+
+.pagination-control-button{
+    border: none;
+    border-radius: 0.5em;
+    width: 3em;
+    height: 1.5em;
+    margin: 0 1em;
+    background-color: #f9e711;
+    font-weight: bold;
+}
+
+.pagination-control-button:hover{
+    background-color: #1a1a1a;
+    color: #b6a708;
+
+}
+
+.pagination-controls{
+    margin-left: 11em;
+}

@@ -94,7 +94,6 @@ export function PlayerProvider({ children }) {
         });
 
         if (currentTrack===null){
-            setPlaylist([track])
             setCurrentTrack(track)
         }
     }

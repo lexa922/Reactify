@@ -1,24 +1,12 @@
-import {use, useEffect} from 'react';
-import {getTracksResources} from './TrackResources'
-import {usePlayer} from "./PlayerContext";
+import {use} from 'react';
 import TrackCard from './TrackCard'
 
-function TrackList(){
-    const {setPlaylist} = usePlayer();
+function TrackList({ tracksPromise }){
 
-    const tracks = use(getTracksResources());
-
-
-    useEffect(() => {
-        setPlaylist(tracks);
-    },[])
-
-
+    const tracks = use(tracksPromise);
 
     return (
-        <div>
-            <h2>Список треків</h2>
-            <div>
+            <div className='track-list'>
                     {tracks.map(track => (
                         <TrackCard
                             key={track.id}
@@ -30,7 +18,6 @@ function TrackList(){
                         />
                 ))}
             </div>
-        </div>
     );
 }
 

@@ -1,11 +1,11 @@
 .playlist-container {
     border-radius: 1em;
-    padding: 0.5em 1em;
+    padding: 0.2em;
     overflow: hidden;
     position: fixed;
     bottom: 1em;
     left: 1em;
-    background-color: #2b2b2b;
+    background-color: #303030;
     z-index: 3;
 }
 
