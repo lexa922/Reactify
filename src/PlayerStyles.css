@@ -28,6 +28,7 @@
     background-color: #f9e711;
     border: none;
     outline: none;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .play-button:hover{
@@ -44,6 +45,7 @@
     outline: none;
     color:white;
     font-weight: bold;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .delete-button:hover{
