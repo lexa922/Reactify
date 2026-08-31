@@ -2,7 +2,7 @@ import {usePlayer} from './PlayerContext'
 
 function PlaylistView() {
 
-    const {playlist, playTrack, deleteTrack, isCurrentTrack} = usePlayer();
+    const {playlist, playTrack, deleteTrack, isCurrentTrack, isPlaying} = usePlayer();
 
     return(
         <div className='playlist-container'>
@@ -18,7 +18,7 @@ function PlaylistView() {
                                 <p>{track.artistName}</p>
                             </div>
                             <button className='delete' onClick={()=>deleteTrack(track.id)}>✕</button>
-                            <button className='play' onClick={()=>playTrack(track)}>{isCurrentTrack(track.id) ? "❚❚" : "▶"}</button>
+                            <button className={`play ${isCurrentTrack(track.id)?"active-button":""}`} disabled={isCurrentTrack(track.id)} onClick={()=>playTrack(track)}>{isCurrentTrack(track.id)&&isPlaying ? "❚❚" : "▶"}</button>
                         </div>
                     ))}
                 </div>

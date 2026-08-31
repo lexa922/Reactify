@@ -1,7 +1,7 @@
 import {usePlayer} from './PlayerContext'
 
 function TrackCard({id, songName, artistName, imageUrl, audioUrl}) {
-    const { playTrack, isCurrentTrack, addToPlaylist, isInPlaylist } = usePlayer();
+    const { playTrack, isCurrentTrack, addToPlaylist, isInPlaylist, isPlaying } = usePlayer();
     const isCurrent = isCurrentTrack(id);
     const track = {id, artistName, songName, imageUrl, audioUrl}
     return(
@@ -16,8 +16,8 @@ function TrackCard({id, songName, artistName, imageUrl, audioUrl}) {
                 <p>{artistName}</p>
             </div>
 
-            <button className={`track-button${isCurrent ? " current" : ""}`} onClick={() => playTrack(track)}>
-                {isCurrent ? "❚❚" : "▶"}
+            <button className={`track-button${isCurrent ? " current" : ""}`} disabled={isCurrent} onClick={() => playTrack(track)}>
+                {isCurrent&&isPlaying ? "❚❚" : "▶"}
             </button>
         </div>
     );

@@ -37,6 +37,7 @@
     border-radius: 50%;
     background-color: #f9e711;
     border: none;
+    cursor: pointer;
 }
 
 .track-button:hover{
@@ -45,13 +46,13 @@
 }
 
 .current{
-    background-color: black;
-    color: #f9e711;
+    background-color: transparent;
+    color: #101010;
+    cursor: default;
 }
-
 .current:hover{
-    background-color: #1a1a1a;
-    color: #b6a708;
+    background-color: transparent;
+    color: #101010;
 }
 
 .track-image-wrapper {

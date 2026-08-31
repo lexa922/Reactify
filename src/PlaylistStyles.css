@@ -92,3 +92,13 @@
     background-color: #1a1a1a;
     color: #b6a708;
 }
+
+.active-button{
+    background-color: transparent;
+}
+
+.active-button:hover{
+    background-color: transparent;
+    color: black;
+    cursor: default;
+}
