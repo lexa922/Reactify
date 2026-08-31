@@ -8,6 +8,7 @@ import './TrackCardStyles.css'
 import './SearchStyles.css'
 import './PlaylistStyles.css'
 import './TrackSectionStyles.css'
+import './TracksSkeletonStyle.css'
 
 import Player from './Player';
 import {SearchSkeleton} from "./Skeletons";

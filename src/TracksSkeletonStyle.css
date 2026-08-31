@@ -1,0 +1,12 @@
+.skeleton-img{
+    background: #3f3c3c;
+    border-radius: 1em;
+}
+
+.skeleton-text{
+    background: #3f3c3c;
+    border-radius: 1em;
+    height: 1em;
+    margin-bottom: 1.2em;
+    margin-left: 0.5em;
+}
