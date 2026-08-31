@@ -8,13 +8,6 @@
     background-color: #303030;
 }
 
-.track-card img{
-    width: 5em;
-    object-fit: fill;
-    border-radius: 1em;
-    border: #101010 solid 1px;
-}
-
 .track-info{
     width: 20em;
     padding-left: 1em;
@@ -61,3 +54,46 @@
     color: #b6a708;
 }
 
+.track-image-wrapper {
+    position: relative;
+    width: 5em;
+    height: 5em;
+    flex-shrink: 0;
+}
+
+.track-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1em;
+    border: #101010 solid 1px;
+    display: block;
+}
+
+.add-to-playlist-button {
+    position: absolute;
+    top: 0.3em;
+    left: 0.3em;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    border: none;
+    background-color: #f9e711;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.add-to-playlist-button:hover {
+    background-color: #b68d00;
+    color: #000000;
+}
+
+.in-playlist {
+    visibility: hidden;
+}

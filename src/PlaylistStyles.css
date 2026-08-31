@@ -6,6 +6,7 @@
     bottom: 1em;
     left: 1em;
     background-color: #2b2b2b;
+    z-index: 3;
 }
 
 .playlist-header {

@@ -24,7 +24,7 @@ export function PlayerProvider({ children }) {
             setPlaylist(newPlayList);
         else {
             setPlaylist(prevPlaylist => {
-                const exists = prevPlaylist.some(t => t.id === track.id);
+                const exists = isInPlaylist(track.id);
                 if (!exists) {
                     return [track, ...prevPlaylist];
                 }
@@ -80,6 +80,25 @@ export function PlayerProvider({ children }) {
         return false;
     }
 
+    function isInPlaylist(id) {
+        return playlist.some((t) => t.id === id);
+    }
+
+    function addToPlaylist(track) {
+        setPlaylist(prevPlaylist=>{
+            const exists = isInPlaylist(track.id);
+            if (!exists) {
+                return [...prevPlaylist, track];
+            }
+            return prevPlaylist;
+        });
+
+        if (currentTrack===null){
+            setPlaylist([track])
+            setCurrentTrack(track)
+        }
+    }
+
     const value = {
         currentTrack,
         playlist,
@@ -90,7 +109,9 @@ export function PlayerProvider({ children }) {
         playNext,
         playPrev,
         deleteTrack,
-        isCurrentTrack
+        isCurrentTrack,
+        addToPlaylist,
+        isInPlaylist
     };
 
     return (
