@@ -35,8 +35,32 @@
         outline: none;
     }
 }
-.search-results{
+.search-results-container{
     position: absolute;
-    top: 2%;
+    top: 9%;
     left: 45%;
+
+}
+
+.search-results{
+    max-height: 37em;
+    overflow-y: scroll;
+    padding-right: 0.5em;
+}
+
+.search-results::-webkit-scrollbar {
+    width: 6px;
+}
+
+.search-results::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.search-results::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.search-results::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.6);
 }
